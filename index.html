@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Real-Time Weather Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
+            <p>Get real-time weather updates for any location</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name..." autocomplete="off">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <button id="locationBtn" class="location-btn">
+                <i class="fas fa-location-crosshairs"></i> Use My Location
+            </button>
+        </div>
+
+        <div id="weatherContainer" class="weather-container" style="display: none;">
+            <div class="weather-main">
+                <div class="location-info">
+                    <h2 id="cityName"><i class="fas fa-map-marker-alt"></i> --</h2>
+                    <p id="date">--</p>
+                </div>
+                <div class="weather-icon">
+                    <img id="weatherIcon" src="" alt="Weather Icon">
+                </div>
+                <div class="temperature">
+                    <h1 id="temp">--°C</h1>
+                    <p id="description">--</p>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <div class="detail-info">
+                        <span class="label">Wind Speed</span>
+                        <span class="value" id="windSpeed">-- km/h</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-droplet"></i>
+                    <div class="detail-info">
+                        <span class="label">Humidity</span>
+                        <span class="value" id="humidity">--%</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-gauge-high"></i>
+                    <div class="detail-info">
+                        <span class="label">Pressure</span>
+                        <span class="value" id="pressure">-- hPa</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-eye"></i>
+                    <div class="detail-info">
+                        <span class="label">Visibility</span>
+                        <span class="value" id="visibility">-- km</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-temperature-arrow-up"></i>
+                    <div class="detail-info">
+                        <span class="label">Feels Like</span>
+                        <span class="value" id="feelsLike">--°C</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <i class="fas fa-sun"></i>
+                    <div class="detail-info">
+                        <span class="label">UV Index</span>
+                        <span class="value" id="uvIndex">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3><i class="fas fa-calendar-day"></i> 5-Day Forecast</h3>
+                <div class="forecast-container" id="forecastContainer">
+                    <!-- Forecast cards will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <p id="errorMessage">--</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
